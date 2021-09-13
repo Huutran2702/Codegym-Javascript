@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <table style="width: 50%;padding: 10px;">
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="text" style="width: 90%;" id="Money">
+                </td>
+                <td align="center">
+                    <select style="width: 45%;">
+                        <option value="VietNam">VietNam</option>
+                        <option value="USD">USD</option>
+                        <option value="Euro">Euro</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <select id="Conver" style="width: 60%;">
+                        <option value="1">VietNam</option>
+                        <option value="23000">USD</option>
+                        <option value="30000">Euro</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <button onclick="Conversion()">Convert</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    function Conversion() {
+        var M = document.getElementById('Money').value;
+        var y = parseInt(M);
+        var N = document.getElementById('Conver').value;
+        var x = parseInt(N);
+        var z = y / x;
+        document.write('Result: ' + z);
+    }
+</script>
+
+</html>

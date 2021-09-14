@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let score = Number(prompt('Nhập điểm :'));
+    if (score >= 9 && score <= 10) {
+        alert('Bạn đạt điểm xuất sắc');
+    }
+    if (score < 9 && score >= 8) {
+        alert('Bạn đạt điểm giỏi');
+    }
+    if ( score <8 && score >= 7) {
+        alert(' Bạn đạt điểm khá');
+    }
+    if (score<7 && score>=6) {
+        alert(' Bạn đạt điểm Trung bình khá');
+    }
+    if ( score <6 && score >= 5) {
+        alert(' Bạn đạt điểm trung bình');
+    }
+    if ( score <4 && score >=0) {
+        alert('Bạn đạt điểm yếu');
+    }
+    if (score< 0 || score >10) {
+        alert(' Điểm không hợp lệ');
+    }
+</script>
+</html>

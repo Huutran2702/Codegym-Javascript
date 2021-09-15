@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <img id="myImg" src="D:\5.Codestudy\3.GitHub\Codegym-Javascript\BT-Mouse-event\thuviendohoa.vn_452.png" style="width: 300px;">
+        <p>Click button below to move the image to right</p>
+        <input type="button" value="Click me" onclick="Moveball()">
+    </form>
+</body>
+<script>
+    let Img = null;
+    Img = document.getElementById('myImg');
+    function Init() {
+        Img = document.getElementById('myImg');
+        Img.style.position = 'relative';
+        Img.style.left = '0px';
+    }
+    function Moveball() {
+        Img.style.left = parseInt(Img.style.left) + 10 + 'px';
+    }
+    window.onload = Init;
+</script>
+
+</html>

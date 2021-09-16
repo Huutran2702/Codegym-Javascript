@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let W = Number(prompt('Nhập chỉ số cân nặng của bạn "kg"', ''));
+    let H = Number(prompt('Nhập chỉ số chiều cao của bạn "m"', ''));
+    let BMI = W / (H * H);
+    switch ((BMI < 18.5) ? 1 : (BMI < 25.0) ? 2 : (BMI < 30.0) ? 3 : 4) {
+        case 1: {
+            alert('Underweight'); break;
+        }
+        case 2: {
+            alert('Normal'); break;
+        }
+        case 3: {
+            alert('Overweight'); break;
+        }
+        case 4: {
+            alert('Obese'); break;
+        }
+    } 
+</script>
+
+</html>

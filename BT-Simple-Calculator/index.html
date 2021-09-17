@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="4" style="height: 20px;">
+                <input type="text" id="ketqua" style="color: blue; text-align: right;" class="ketqua left" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="num1()" class="left">
+            </td>
+            <td>
+                <input type="button" value="2" onclick="num2()">
+            </td>
+            <td>
+                <input type="button" value="3" onclick="num3()">
+            </td>
+            <td>
+                <input type="button" value="+" onclick="numAdd('cong')">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="num4()" class="left">
+            </td>
+            <td>
+                <input type="button" value="5" onclick="num5()">
+            </td>
+            <td>
+                <input type="button" value="6" onclick="num6()">
+            </td>
+            <td>
+                <input type="button" value="-" onclick="numSub('tru')">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" onclick="num7()"  class="left">
+            </td>
+            <td>
+                <input type="button" value="8" onclick="num8()">
+            </td>
+            <td>
+                <input type="button" value="9" onclick="num9()">
+            </td>
+            <td>
+                <input type="button" value="x" onclick="numMul('nhan')">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="AC" onclick="numAC()"  class="left">
+            </td>
+            <td>
+                <input type="button" value="0" onclick="num0()">
+            </td>
+            <td>
+                <input type="button" value="=" onclick="numEqual()">
+            </td>
+            <td>
+                <input type="button" value="/" onclick="numDiv('chia')">
+            </td>
+        </tr>
+        <div id="gia-tri-cu"></div>
+        <div id="gia-tri-moi"></div>
+    </table>
+    <style>
+        .left {
+            margin-left: 5px;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+        }
+
+        input {
+            width: 45px;
+            height: 45px;
+            color: blue;
+        }
+
+        .ketqua {
+            width: 195px;
+            font-size: 20px;
+        }
+
+        table {
+            border: 1px solid black;
+            margin: 100px;
+            background-color: rgb(108, 166, 194);
+        }
+    </style>
+</body>
+<script>
+    let firstValue = 0;
+    let secondValue = 0;
+    let operator = null;
+    function num1() {
+        let one = 1;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + one;
+    }
+
+    function num2() {
+        let two = 2;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + two;
+    }
+
+    function num3() {
+        let three = 3;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + three;
+    }
+
+    function num4() {
+        let four = 4;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + four;
+    }
+
+    function num5() {
+        let five = 5;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + five;
+    }
+
+    function num6() {
+        let six = 6;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + six;
+    }
+
+    function num7() {
+        let seven = 7;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + seven;
+    }
+
+    function num8() {
+        let eight = 8;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + eight;
+    }
+
+    function num9() {
+        let nine = 9;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + nine;
+    }
+
+    function num0() {
+        let zero = 0;
+        document.getElementById('ketqua').value = document.getElementById('ketqua').value + zero;
+    }
+
+    function numAdd(cong) {
+        firstValue = Number(document.getElementById('ketqua').value);
+        operator = cong;
+        document.getElementById('ketqua').value = '';
+    }
+
+    function numSub(tru) {
+        firstValue = Number(document.getElementById('ketqua').value);
+        operator = tru;
+        document.getElementById('ketqua').value = ' ';
+    }
+
+    function numMul(nhan) {
+        firstValue = Number(document.getElementById('ketqua').value);
+        operator = nhan;
+        document.getElementById('ketqua').value = ' ';
+    }
+
+    function numDiv(chia) {
+        firstValue = Number(document.getElementById('ketqua').value);
+        operator = chia;
+        document.getElementById('ketqua').value = ' ';
+    }
+
+    function numEqual() {
+        secondValue = Number(document.getElementById('ketqua').value);
+        let result;
+        if (operator == 'cong') {
+            result = firstValue + secondValue;
+        } else if (operator == 'tru') {
+            result = firstValue - secondValue;
+        } else if (operator == 'nhan') {
+            result = firstValue * secondValue;
+        } else if (operator == 'chia') {
+            result = firstValue / secondValue;
+        }
+        document.getElementById('ketqua').value = result;
+    }
+    function numAC() {
+        document.getElementById('ketqua').value = '';
+    }
+</script>
+
+</html>

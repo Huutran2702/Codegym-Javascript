@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Do you love me?</h2>
+    <input type="button" value="Yes" onclick="Yes()" style="position: absolute; left: 50px; top: 70px;">
+    <input type="button" value="No" onmouseover="No()" id="Toado" style="position: absolute; left: 120px; top: 70px;">
+
+</body>
+<script>
+    function Yes() {
+        alert('Chúc mừng bạn đã trả lời đúng');
+    }
+    var x;
+    var y;
+
+    function No() {
+        x = Math.round(Math.random() * window.innerWidth);
+        y = Math.round(Math.random() * window.innerHeight);
+        document.getElementById('Toado').style.left = x + 'px';
+        document.getElementById('Toado').style.top = y + 'px';
+    }
+</script>
+
+</html>

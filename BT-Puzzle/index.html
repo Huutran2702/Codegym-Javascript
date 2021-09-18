@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div class="picture" id="picture">
+            <img src="http://127.0.0.1:5500/Picture/1.jpg" onclick="change1()">
+            <img src="http://127.0.0.1:5500/Picture/2.jpg" onclick="change2()">
+            <img src="http://127.0.0.1:5500/Picture/3.jpg" onclick="change3()">
+            <img src="http://127.0.0.1:5500/Picture/4.jpg" onclick="change4()">
+            <img src="http://127.0.0.1:5500/Picture/5.jpg" onclick="change5()">
+
+        </div>
+    </form>
+
+    <style>
+        form {
+            margin-left: 500px;
+        }
+
+        .picture {
+            width: 500px;
+            box-shadow: rgb(17, 16, 16) 4px 4px 9px;
+        }
+
+        img {
+            width: 500px;
+        }
+    </style>
+</body>
+<script>
+    var Anh1 = [
+        "http://127.0.0.1:5500/Picture/1.jpg",
+        "http://127.0.0.1:5500/Picture/2.jpg",
+        "http://127.0.0.1:5500/Picture/3.jpg",
+        "http://127.0.0.1:5500/Picture/4.jpg",
+        "http://127.0.0.1:5500/Picture/5.jpg",
+
+        "http://127.0.0.1:5500/Picture/a.jpg",
+        "http://127.0.0.1:5500/Picture/b.jpg",
+        "http://127.0.0.1:5500/Picture/c.jpg",
+        "http://127.0.0.1:5500/Picture/d.jpg",
+        "http://127.0.0.1:5500/Picture/e.jpg",
+
+        "http://127.0.0.1:5500/Picture/I.jpg",
+        "http://127.0.0.1:5500/Picture/II.jpg",
+        "http://127.0.0.1:5500/Picture/III.jpg",
+        "http://127.0.0.1:5500/Picture/IV.jpg",
+        "http://127.0.0.1:5500/Picture/V.jpg",
+    ]
+
+    let img1 = document.getElementsByTagName('img')[0].src;
+    let img2 = document.getElementsByTagName('img')[1].src;
+    let img3 = document.getElementsByTagName('img')[2].src;
+    let img4 = document.getElementsByTagName('img')[3].src;
+    let img5 = document.getElementsByTagName('img')[4].src;
+    let result = document.getElementById('picture');
+    let a;
+    let b;
+    let c;
+    let d;
+    let e;
+
+    function change1() {
+        let img1 = document.getElementsByTagName('img')[0].src;
+        if (img1 == Anh1[0]) {
+            document.getElementsByTagName('img')[0].src = Anh1[5];
+        } else if (img1 == Anh1[5]) {
+            document.getElementsByTagName('img')[0].src = Anh1[10];
+        } else {
+            document.getElementsByTagName('img')[0].src = Anh1[0];
+        }
+        a = document.getElementsByTagName('img')[0].src;
+        CheckImg();
+    }
+
+    function change2() {
+        let img2 = document.getElementsByTagName('img')[1].src;
+        if (img2 == Anh1[1]) {
+            document.getElementsByTagName('img')[1].src = Anh1[6];
+        } else if (img2 == Anh1[6]) {
+            document.getElementsByTagName('img')[1].src = Anh1[11];
+        } else {
+            document.getElementsByTagName('img')[1].src = Anh1[1];
+        }
+        b = document.getElementsByTagName('img')[1].src;
+        CheckImg();
+    }
+
+    function change3() {
+        let img3 = document.getElementsByTagName('img')[2].src;
+        if (img3 == Anh1[2]) {
+            document.getElementsByTagName('img')[2].src = Anh1[7];
+        } else if (img3 == Anh1[7]) {
+            document.getElementsByTagName('img')[2].src = Anh1[12];
+        } else {
+            document.getElementsByTagName('img')[2].src = Anh1[2];
+        }
+        c = document.getElementsByTagName('img')[2].src;
+        CheckImg();
+    }
+
+    function change4() {
+        let img4 = document.getElementsByTagName('img')[3].src;
+        if (img4 == Anh1[3]) {
+            document.getElementsByTagName('img')[3].src = Anh1[8];
+        } else if (img4 == Anh1[8]) {
+            document.getElementsByTagName('img')[3].src = Anh1[13];
+        } else {
+            document.getElementsByTagName('img')[3].src = Anh1[3];
+        }
+        d = document.getElementsByTagName('img')[3].src;
+
+        CheckImg();
+    }
+
+    function change5() {
+        let img5 = document.getElementsByTagName('img')[4].src;
+        if (img5 == Anh1[4]) {
+            document.getElementsByTagName('img')[4].src = Anh1[9];
+        } else if (img5 == Anh1[9]) {
+            document.getElementsByTagName('img')[4].src = Anh1[14];
+        } else {
+            document.getElementsByTagName('img')[4].src = Anh1[4];
+        }
+        e = document.getElementsByTagName('img')[4].src;
+        CheckImg();
+    }
+
+    function CheckImg() {
+        if (
+            a == Anh1[0] &&
+            b == Anh1[1] &&
+            c == Anh1[2] &&
+            d == Anh1[3] &&
+            e == Anh1[4]
+        ) {
+            alert('Bạn đã chiến thắng');
+        } else if (
+            a == Anh1[5] &&
+            b == Anh1[6] &&
+            c == Anh1[7] &&
+            d == Anh1[8] &&
+            e == Anh1[9]
+        ) {
+            alert('Bạn đã chiến thắng');
+        } else if (
+            a == Anh1[10] &&
+            b == Anh1[11] &&
+            c == Anh1[12] &&
+            d == Anh1[13] &&
+            e == Anh1[14]
+        ) {
+            alert('Bạn đã chiến thắng');
+        }
+    }
+</script>
+
+</html>

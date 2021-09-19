@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let diemKT = Number(prompt(' Nhập điểm bài kiểm tra'));
+    let diemKtGk = Number(prompt(' Nhập điểm kiểm tra giữa kỳ'));
+    let diemKtCk = Number(prompt(' Nhập điểm kiểm tra cuối kỳ'));
+    let diemTBM = parseFloat((diemKT + 2 * diemKtGk + 3 *diemKtCk)/6);
+    if (diemTBM >=9) {
+        document.write('Điểm trung bình môn của bạn là : ' , diemTBM , '<br>','Bạn đạt học lực xuất sắc');
+    } else if (diemTBM>=8) {
+        document.write('Điểm trung bình môn của bạn là : ' , diemTBM , '<br>','Bạn đạt học lực giỏi');
+    } else if (diemTBM>=7) {
+        document.write('Điểm trung bình môn của bạn là : ' , diemTBM , '<br>','Bạn đạt học lực khá');
+    } else if (diemTBM>=6) {
+        document.write('Điểm trung bình môn của bạn là : ' , diemTBM , '<br>','Bạn đạt học lực trung bình khá');
+    } else if (diemTBM>=5) {
+        document.write('Điểm trung bình môn của bạn là : ' , diemTBM , '<br>','Bạn đạt học lực trung bình');
+    } else {
+        document.write('Điểm trung bình môn của bạn là : ' , diemTBM , '<br>','Bạn đạt học lực yếu');
+    }
+
+</script>
+</html>

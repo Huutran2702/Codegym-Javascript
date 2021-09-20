@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let number = [2, 4, 5, 8, 9, 10, 20, 99, 31, 11];
+    // // for (let i = 0; i < number.length; i++) {
+    // //     document.write(number[i] + '<br>');
+
+    // // }
+    // for (const key in number) {
+    //     document.write(number[key] + '<br>');
+
+    //     }
+    // var number = [];
+    //     for (let i = 0; i < 10; i++) {
+    //         number[i] = Math.floor(Math.random()*9+1) ;
+
+    //     }
+    //     for (let i = 0; i < 10; i++) {
+    //        document.write(`${number[i]} <br> ` ) ;
+
+    //     }
+
+    // let min = 30 , max = 70;
+    // let size = 20;
+    // var arr = [];
+    // var total = 0;
+    // for (let i = 0; i < size; i++) {
+    //     arr[i] = Math.floor(Math.random()*(max - min + 1 ) + min);
+
+    // }
+    // for (let i = 0; i < size; i++) {
+    //    document.write(`${arr[i]} , `);
+    //      total += arr[i];
+    // }
+    // document.write(` <br> Tổng của các phần tử trong mảng:  ${total}`);
+
+    //    Tao mang gom 20 phan tu sinh ngau nhien từ 10 đến 90 sau đó thực hiện :
+
+    //    1 - Hiển thị mảng, các phần tử cách nhau bằng dấu chấm phẩy
+    //    2 - Hiển thị các số nguyên tố có trong mảng
+    //    3 - Hiển thị số lượng các số chẵn có trong mảng
+    //    4- Hiển thị tổng các số lẻ
+
+    var arrEx = [];
+    let min = 10,
+        max = 100000;
+    let size = 20;
+    let dem = 0;
+    let Even = 0;
+    let totalOdd = 0;
+    for (let i = 0; i < size; i++) {
+        arrEx[i] = Math.floor(Math.random() * (max - min + 1) + min);
+        document.write(`${arrEx[i]}; `);
+
+    }
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Các số nguyên tố là: ");
+    for (let i = 0; i < size; i++) {
+        for (let j = 2; j < arrEx[i] - 1; j++) {
+            if (arrEx[i] % j == 0) {
+                dem = dem + 1;
+            }
+
+        }
+        if (dem == 0) {
+            document.write(`${arrEx[i]};`);
+
+        }
+        dem = 0;
+    }
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Số lượng các số chẵn là: ");
+    for (let i = 0; i < size; i++) {
+        if (arrEx[i] % 2 == 0) {
+            Even += 1;
+        } else {
+            totalOdd+= arrEx[i];
+        }
+
+    }
+    document.write(Even);
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Tổng các số lẻ là: ");
+    document.write(totalOdd);
+
+    
+
+</script>
+
+</html>

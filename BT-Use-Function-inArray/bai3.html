@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let str = window.prompt();
+    let middle = [];
+    for (let i = 0; i < str.length; i++) {
+        middle[i] = str[i].toUpperCase();
+    }
+   let result = [];
+  for (let j = 0; j < str.length; j++) {
+      if (middle[j] == str[j]) {
+          result[j] = str[j].toLowerCase();
+      } else {
+          result[j] = middle[j];
+      }
+  }
+  let result1 = result.join('');
+  document.write(result1);
+</script>
+</html>

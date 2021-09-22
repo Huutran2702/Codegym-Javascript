@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="vocab"> 
+        <input type="button" value="Translate" onclick="trans()">
+    </div>
+    <br>
+    <div>
+        <table>
+            <tr>
+                <td>Từ tiếng anh</td>
+                <td>Từ tiếng Việt</td>
+            </tr>
+        </table>
+    </div>
+    <style>
+        td {
+            text-align: center;
+            width: 20%;
+            height: 50px;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
+</body>
+<script>
+    var engVocab = ["student","school","dog"]
+    var viet = [
+        "học sinh",
+        "trường học",
+        "con chó"
+    ]
+    let size = 3;
+    function trans() {
+        let m = document.getElementById('vocab').value;
+        for (let i = 0; i < size ; i++) {
+            if (m == engVocab[i]) {
+                document.getElementsByTagName('td')[0].innerHTML = m;
+                document.getElementsByTagName('td')[1].innerHTML = `${viet[i]}`;
+                break;
+            } 
+            // else {
+            //     document.getElementsByTagName('td')[0].innerHTML = "keyword not found";
+            // }
+            if (m !== engVocab[i]) {
+                document.getElementsByTagName('td')[0].innerHTML = "keyword not found";
+                document.getElementsByTagName('td')[1].innerHTML = "";
+            }
+        }
+    }
+</script>
+</html>

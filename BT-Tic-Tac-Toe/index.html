@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <table id="table">
+            <tr>
+                <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> -->
+            </tr>
+            <tr>
+                <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> -->
+            </tr>
+            <tr>
+                <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> -->
+            </tr>
+            <tr>
+                <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> -->
+            </tr>
+            <tr>
+                <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> -->
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="Người chơi 1" onclick="player1()">
+                </td>
+                <td>
+                    <input type="button" value="Người chơi 2" onclick="player2()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Reset" onclick="resetGame()">
+                </td>
+            </tr>
+        </table>
+        <h2 style="text-align: center;" id="result"> </h2>
+    </div>
+    
+    <style>
+        tr {
+            font-size: 50px;
+            text-align: center;
+            width: 100px;
+            height: 20px;
+        }
+
+        table {
+            margin: 0 auto;
+
+        }
+
+        .mid {
+            margin: 0 auto;
+        }
+         
+    </style>
+</body>
+<script>
+    let matrix = [];
+
+    function matrixGame() {
+
+        let c = 0;
+        for (let i = 0; i < 5; i++) {
+            matrix[i] = new Array();
+            for (let j = 0; j < 5; j++) {
+                matrix[i][j] = '.';
+                c++;
+            }
+            document.getElementsByTagName('tr')[i].innerHTML = matrix[i].join(" ");
+        }
+        return matrix
+    }
+    matrixGame();
+
+    function player1() {
+        let X = Number(prompt('Nhập tọa độ X'));
+        let Y = Number(prompt('Nhập tọa độ Y'));
+        matrix[X][Y] = 'X';
+        for (let i = 0; i < 5; i++) {
+            document.getElementsByTagName('tr')[i].innerHTML = matrix[i].join(" ");
+        }
+        checkWin();
+    }
+    function player2() {
+        let X = Number(prompt('Nhập tọa độ X'));
+        let Y = Number(prompt('Nhập tọa độ Y'));
+        matrix[X][Y] = 'O';
+        for (let i = 0; i < 5; i++) {
+            document.getElementsByTagName('tr')[i].innerHTML = matrix[i].join(" ");
+
+        }
+        checkWin();
+    }
+    function checkWin() {
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (matrix[i][j] == matrix[i][j + 1] && matrix[i][j] == matrix[i][j + 2]) {
+                    if (matrix[i][j] == "X") {
+                        document.getElementById('result').innerHTML = "Player 1 Win";
+                    } else if (matrix[i][j] == "O") {
+                        document.getElementById('result').innerHTML = "Player 2 Win";
+                    }
+                } else if (matrix[i][j] == matrix[i + 1][j + 1] && matrix[i][j] == matrix[i + 2][j + 2]) {
+                    if (matrix[i][j] == "X") {
+                        document.getElementById('result').innerHTML = "Player 1 Win";
+                    } else if (matrix[i][j] == "O") {
+                        document.getElementById('result').innerHTML = "Player 2 Win";
+                    }
+
+                }
+
+            }
+        }
+    }    
+    function resetGame() {
+    location.reload();
+ }
+
+</script>
+
+</html>

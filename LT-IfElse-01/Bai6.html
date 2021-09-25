@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let doanhSo = Number(prompt('Nhập doanh số bán hàng của bạn',''));
+    let hoaHong;
+    if (doanhSo <= 1000000) {
+        hoaHong = doanhSo*3/100;
+    } else if (doanhSo <= 10000000) {
+        hoaHong = doanhSo*5/100;
+    } else if (doanhSo <= 100000000) {
+        hoaHong = doanhSo*7/100;
+    } else {
+        hoaHong = doanhSo*10/100;
+    }
+    document.write('Hoa hồng của bạn là: ', + hoaHong);
+</script>
+</html>

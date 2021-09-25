@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="checkbox" onclick="onGood()"> Good <br>
+        <input type="checkbox"onclick="onCheap()"> Cheap <br>
+        <input type="checkbox"onclick="onFast()"> Fast
+
+    </div>
+</body>
+<script>
+    
+    let good = document.getElementsByTagName('input')[0].checked;
+    let cheap = document.getElementsByTagName('input')[1].checked;
+    let fast = document.getElementsByTagName('input')[2].checked;
+  
+    
+function onGood() {
+    let good = document.getElementsByTagName('input')[0].checked;
+    let cheap = document.getElementsByTagName('input')[1].checked;
+    let fast = document.getElementsByTagName('input')[2].checked;
+    if (good == true && cheap == true && fast == true) {
+        document.getElementsByTagName('input')[1].checked =false;
+        }
+        
+     
+}
+    
+function onCheap() {
+    let good = document.getElementsByTagName('input')[0].checked;
+    let cheap = document.getElementsByTagName('input')[1].checked;
+    let fast = document.getElementsByTagName('input')[2].checked;
+    if (good == true && cheap == true && fast == true) {
+        document.getElementsByTagName('input')[2].checked =false;
+        } 
+}
+    
+function onFast() {
+    let good = document.getElementsByTagName('input')[0].checked;
+    let cheap = document.getElementsByTagName('input')[1].checked;
+    let fast = document.getElementsByTagName('input')[2].checked;
+    if (good == true && cheap == true && fast == true) {
+        document.getElementsByTagName('input')[0].checked =false;
+        }
+}
+</script>
+</html>

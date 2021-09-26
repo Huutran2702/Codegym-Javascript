@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"> Nhập số thực a <br>
+    <input type="text"> Nhập số thực b <br>
+    <input type="text"> Nhập số thực c<br>
+    <input type="button" value="Kiểm tra" onclick="checkResult()"> <br>
+    <p id="Result"></p>
+</body>
+<script>
+ let a = Number(document.getElementsByTagName('input')[0].value);
+ let b = Number(document.getElementsByTagName('input')[1].value);
+ let c = Number(document.getElementsByTagName('input')[2].value);
+
+function checkResult() {
+ let a = Number(document.getElementsByTagName('input')[0].value);
+ let b = Number(document.getElementsByTagName('input')[1].value);
+ let c = Number(document.getElementsByTagName('input')[2].value);
+    if (a>0 && b >0 & c > 0) {
+        if (a+b>c && a+c>b && b+c>a) {
+            document.getElementById('Result').innerHTML = `Ba số ${a}, ${b}, ${c} chính là cạnh của tam giác`;
+        } else {
+            document.getElementById('Result').innerHTML = `Ba số ${a}, ${b}, ${c} không phải là cạnh của tam giác`;
+        }
+    } else {
+        document.getElementById('Result').innerHTML = `Ba số ${a}, ${b}, ${c} không phải là cạnh của tam giác`;
+    }
+}
+</script>
+</html>

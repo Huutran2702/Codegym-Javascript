@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"> Nhập độ C <br>
+    <input type="button" value="Chuyển đổi" onclick="chuyenNhietDo()"> <br>
+    <input type="text"> Hiển thị độ F
+</body>
+<script>
+    
+    
+    function chuyenNhietDo() {
+        let doC = Number(document.getElementsByTagName('input')[0].value);
+        let doF = doC*9/5 +32;
+        document.getElementsByTagName('input')[2].value = doF; 
+    }
+    
+</script>
+</html>

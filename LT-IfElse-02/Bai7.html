@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="Text">Nhập hệ số a <br>
+    <input type="Text">Nhập hệ số b <br>
+    <input type="text"> Nhập hệ số c <br>
+    <input type="button" value="Tìm x" onclick="timNghiemX()"> <br>
+    <div>
+        <p id="giaTriX"></p>
+    </div>
+</body>
+<script>
+    function timNghiemX() {
+        let a = Number(document.getElementsByTagName('input')[0].value);
+        let b = Number(document.getElementsByTagName('input')[1].value);
+        let c = Number(document.getElementsByTagName('input')[2].value);
+        let delta = b*b - 4*a*c;
+        if (delta < 0) {
+                document.getElementById('giaTriX').innerHTML = "Phương trình vô nghiệm";
+            } else if (delta == 0) {
+                document.getElementById('giaTriX').innerHTML = "Phương trình có nghiệm kép là x =" + (-b)/(2*a);
+            }
+         else {
+            document.getElementById('giaTriX').innerHTML = "Nghiệm của phương trình là x1 = " + ((-b + Math.sqrt(delta))/(2*a)) + "    Và x2 = " + ((-b - Math.sqrt(delta))/(2*a));
+        }
+
+    }
+</script>
+</html>

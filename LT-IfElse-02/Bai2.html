@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"> Nhập mét <br>
+    <input type="button" value="Chuyển đổi" onclick="chuyenDoDai()"> <br>
+    <input type="text"> Hiển thị feet
+</body>
+<script>
+      function chuyenDoDai() {
+        let met = Number(document.getElementsByTagName('input')[0].value);
+        let feet = met*3.2808;
+        document.getElementsByTagName('input')[2].value = feet; 
+    }
+</script>
+</html>

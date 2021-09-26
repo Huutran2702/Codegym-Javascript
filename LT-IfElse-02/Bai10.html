@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let chiso = Number(prompt('Nhập số kW điện cần tính'));
+    if (chiso <= 50) {
+        alert(`Tiền điện cần chi trả là ${chiso * 1.678} VND`);
+    } else if (chiso <= 100) {
+        alert(`Tiền điện cần chi trả là ${50 * 1.678 + (chiso - 50)*1.734} VND`);
+    } else if (chiso <= 200) {
+        alert(`Tiền điện cần chi trả là ${50 * 1.678 + 50 * 1.734 + (chiso - 100)*2.014} VND`);
+    } else if (chiso <= 300) {
+        alert(`Tiền điện cần chi trả là ${50 * 1.678 + 50 * 1.734 + 100*2.014+ (chiso - 200)*2.536} VND`);
+    } else if (chiso <= 400) {
+        alert(`Tiền điện cần chi trả là ${50 * 1.678 + 50 * 1.734 + 100*2.014+ 100*2.536+ (chiso - 300)*2.834} VND`);
+    } else if (chiso > 400) {
+        alert(`Tiền điện cần chi trả là ${50 * 1.678 + 50 * 1.734 + 100*2.014+ 100*2.536+ 100*2.834 + (chiso - 400)*2.927} VND`);
+    }
+</script>
+</html>

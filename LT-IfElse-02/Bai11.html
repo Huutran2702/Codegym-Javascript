@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let TNTT = Number(prompt('Nhập thu nhập cá nhân thực tế "Tính bằng triệu VND"'));
+    if (TNTT<=5) {
+        alert(`Thuế thu nhập cá nhân của bạn là ${5*TNTT/100} VND`);
+    } else if (TNTT<=10) {
+        alert(`Thuế thu nhập cá nhân của bạn là ${10*TNTT/100-0.25} triệu VND`);
+    } else if (TNTT<=18) {
+        alert(`Thuế thu nhập cá nhân của bạn là ${15*TNTT/100-0.75} triệu VND`);
+    } else if (TNTT<=32) {
+        alert(`Thuế thu nhập cá nhân của bạn là ${20*TNTT/100-1.65} triệu VND`);
+    } else if (TNTT<=52) {
+        alert(`Thuế thu nhập cá nhân của bạn là ${25*TNTT/100-3.25} triệu VND`);
+    } else if (TNTT<=80) {
+        alert(`Thuế thu nhập cá nhân của bạn là ${30*TNTT/100-5.85} triệu VND`);
+    } else if (TNTT>80) {
+        alert(`Thuế thu nhập cá nhân của bạn là ${35*TNTT/100-9.85} triệu VND`);
+    }
+</script>
+</html>

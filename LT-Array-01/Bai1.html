@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let integerArray = [];
+    for (let i = 0; i < 10; i++) {
+        integerArray.push(Math.floor(Math.random()*(20-1+1)+1));
+        
+    }
+    document.write(integerArray);
+    document.write(`<br>`);
+    document.write(`Những số nguyên lớn hơn hoặc bằng 10 là: <br>`);
+    let count = 0;
+    for (let j = 0; j < integerArray.length; j++) {
+       if (integerArray[j] >= 10) {
+           document.write(`${integerArray[j]} ,`);
+           count+=1;
+       }
+        
+    }
+    document.write(`<br>`);
+    document.write(`Số lượng số nguyên lớn hơn hoặc bằng 10 là: <br>`);
+    document.write(count);
+
+
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let array = [10,20,11,27,31,65,83,91,77,60];
+    let max = 0;
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total+= array[i];
+        if (array[i]>= max) {
+            max = array[i];
+        }
+    }
+    document.write(`Gía trị lớn nhất trong mảng là : ${max} <br>`);
+    document.write(`Gía trị trung bình của mảng là : ${total/array.length} <br>`);
+    
+
+</script>
+</html>

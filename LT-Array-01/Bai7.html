@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+     let array = [];
+    let size = 10;
+    for (let i = 0; i <size; i++) {
+        array.push(Math.floor(prompt('Nhập số nguyên')));
+    }
+    let V = Math.floor(prompt('Nhập số bất kỳ'));
+    for (let i = 0; i < size; i++) {
+        if (V == array[i]) {
+        array.splice(array.indexOf(V),1)
+        array.push(0);
+        } 
+    }
+    document.write(`<br> ${array} `)
+    
+</script>
+</html>

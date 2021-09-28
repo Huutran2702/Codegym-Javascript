@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function createString(size) {
+            let array = [];
+            for (let i = 0; i < size; i++) {
+                array[i] = prompt('Nhập phần tử trong mảng');
+
+            }
+            return array;
+        }
+        let array = createString(5);
+        let addString = prompt('Nhập ký tự cần kiểm tra');
+        let count = 0;
+        if (array.indexOf(addString) == -1) {
+            alert(-1)
+        } else {
+            for (let i = 0; i < array.length; i++) {
+                if (addString == array[i]) {
+                    count += 1;
+                }
+
+            }
+            alert(`Số lần lặp lại của ký tự trên là ${count}`)
+        }
+    </script>
+</body>
+
+</html>

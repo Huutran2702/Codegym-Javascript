@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table style="width: 100%; text-align: center;background-color: rgb(233, 115, 69);">
+        <tr>
+            <td style="width: 100%;">
+                <h4> NHẬP TÊN ĐIỆN THOẠI CẦN NHẬP KHO</h4>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="UpdatePhone">
+                <input type="button" value="Insert" onclick="addProductToArray()">
+            </td>
+        </tr>
+
+    </table>
+    <hr>
+    <table style="width: 100%;text-align: center;background-color: rgb(207, 241, 134);">
+        <tr>
+            <th colspan="3">BẢNG DANH SÁCH ĐIỆN THOẠI ĐÃ CÓ TRONG KHO</th>
+        </tr>
+        <tr>
+            <th style="width: 7%;">
+                STT
+            </th>
+            <th style="width: 37%;">
+                Tên điện thoại
+            </th>
+            <th style="width: 57%;">
+                Cập nhật
+            </th>
+        </tr>
+    </table>
+    <div>
+        <table id="Listphone" style="text-align: center; width: 100%;background-color: rgb(207, 241, 134);" border="1">
+
+        </table>
+    </div>
+    <style>
+    </style>
+</body>
+<script>
+    let listPhone = ["Iphone 5", "Iphone 5s", "Iphone 6", "Iphone 6s", "Iphone 7"];
+
+    function displayListPhone(array, i) {
+        var table = document.getElementById('Listphone');
+        var row = table.insertRow(i);
+        var cell = row.insertCell(0);
+        var cell1 = row.insertCell(1);
+        var cell2 = row.insertCell(2);
+        cell.innerHTML = `${i+1}`
+        cell1.innerHTML = array[i];
+        cell2.innerHTML =
+            `
+                <input type="button" value = "Edit" id="Edit${i}" onclick="editProduct(${i})">
+                <input type="button" value = "Delete" id="Delete${i}" onclick="deleteProduct(${i})">
+                            `
+    }
+
+    for (let i = 0; i < listPhone.length; i++) {
+        displayListPhone(listPhone, i);
+    }
+
+    function addProductToArray() {
+        let product = document.getElementById('UpdatePhone').value;
+        let index = listPhone.indexOf(product);
+        if (product == "") {
+            alert('Bạn chưa nhập thông tin sản phẩm');
+        } else {
+            if (index !== -1) {
+                alert('Sản phẩm đã có trong kho');
+            } else {
+                listPhone.push(product);
+                displayListPhone(listPhone, listPhone.length - 1);
+            }
+        }
+        document.getElementById('UpdatePhone').value = "";
+
+    }
+
+    function editProduct(i) {
+        let newTable = document.getElementById('Listphone');
+        let edit = confirm('Bạn muốn sửa đổi sản phẩm này');
+        if (edit == true) {
+            let newProduct = prompt('Nhập tên sản phẩm mới');
+            let a = listPhone.indexOf(newProduct);
+            if (newProduct == "" || newProduct == null) {
+                alert('Bạn chưa nhập tên sản phẩm');
+            } else if (a == -1) {
+                listPhone[i] = newProduct;
+                for (let i = 0; i < listPhone.length; i++) {
+                    newTable.deleteRow(i);
+                    displayListPhone(listPhone, i);
+                }
+            } else {
+                alert('Sản phẩm bạn nhập đã có trong kho')
+            }
+        }
+    }
+
+    function deleteProduct(i) {
+        let newTable = document.getElementById('Listphone');
+        let edit = confirm('Bạn muốn xóa sản phẩm này');
+        if (edit == true) {
+            listPhone.splice(i, 1)
+            newTable.deleteRow(i);
+            for (let j = 0; j < listPhone.length; j++) {
+                newTable.deleteRow(j);
+                displayListPhone(listPhone, j);
+            }
+        }
+    }
+</script>
+
+</html>
